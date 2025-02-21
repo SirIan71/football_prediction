@@ -54,8 +54,8 @@ columns_order = ['date', 'league', 'season', 'home_team', 'away_team', 'home_sco
 df = df[columns_order]
 
 # Save to CSV
-df.to_csv('football_data.csv', index=False)
-print(f"Data scraped and saved to football_data.csv. Total matches: {len(df)}")
+df.to_csv('football_data2.csv', index=False)
+print(f"Data scraped and saved to football_data2.csv. Total matches: {len(df)}")
 
 # Print first few rows of the processed data
 print(df.head())

@@ -8,10 +8,10 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Load the trained ensemble model, label encoder, and score prediction models
-ensemble_model = joblib.load('football_prediction_ensemble.joblib')
+ensemble_model = joblib.load('Models/football_prediction_ensemble.joblib')
 le = joblib.load('label_encoder.joblib')
-home_goals_model = joblib.load('home_goals_model.joblib')
-away_goals_model = joblib.load('away_goals_model.joblib')
+home_goals_model = joblib.load('Models/home_goals_model.joblib')
+away_goals_model = joblib.load('Models/away_goals_model.joblib')
 
 # Load team strength data and other necessary data
 df = pd.read_csv('football_match_data.csv')
