@@ -40,7 +40,7 @@ def scrape_football_data(start_year, end_year):
     return pd.concat(all_data, ignore_index=True)
 
 # Usage
-df = scrape_football_data(2014, 2023)
+df = scrape_football_data(2014, 2025)
 
 # Data cleaning and transformation
 df['date'] = pd.to_datetime(df['datetime']).dt.date
@@ -54,8 +54,8 @@ columns_order = ['date', 'league', 'season', 'home_team', 'away_team', 'home_sco
 df = df[columns_order]
 
 # Save to CSV
-df.to_csv('football_data2.csv', index=False)
-print(f"Data scraped and saved to football_data2.csv. Total matches: {len(df)}")
+df.to_csv('football_data3.csv', index=False)
+print(f"Data scraped and saved to football_data3.csv. Total matches: {len(df)}")
 
 # Print first few rows of the processed data
 print(df.head())
