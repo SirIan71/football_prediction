@@ -29,6 +29,9 @@ def scrape_football_data(start_year, end_year):
                'Serie_A': 'italian_serie_a',
                'Ligue_1': 'french_ligue_1'}
     
+    start_year = 2014
+    end_year = datetime.now().year -1
+    
     for year in range(start_year, end_year + 1):
         for league, league_name in leagues.items():
             print(f"Scraping data for {league} {year}")
@@ -45,7 +48,7 @@ def scrape_football_data(start_year, end_year):
     return pd.concat(all_data, ignore_index=True)
 
 # Usage
-df = scrape_football_data(2014, 2024)
+df = scrape_football_data(2014, 2025)
 
 # Print column names
 print("Available columns:", df.columns.tolist())
@@ -73,11 +76,11 @@ numeric_columns = ['home_goals', 'away_goals', 'home_xG', 'away_xG']
 df[numeric_columns] = df[numeric_columns].apply(pd.to_numeric, errors='coerce')
 
 # Save to CSV
-df.to_csv('football_match_data.csv', index=False)
-print(f"Data scraped and saved to football_match_data.csv. Total matches: {len(df)}")
+df.to_csv('football_match_data_1.csv', index=False)
+print(f"Data scraped and saved to football_match_data_1.csv. Total matches: {len(df)}")
 
-# Print first few rows of the processed data
-print(df.head())
+# Print last few rows of the processed data
+print(df.tail())
 
 # Print column names of the final dataframe
 print("Final columns:", df.columns.tolist())

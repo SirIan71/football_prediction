@@ -25,6 +25,9 @@ def scrape_football_data(start_year, end_year):
     
     leagues = ['EPL', 'La_liga', 'Bundesliga', 'Serie_A', 'Ligue_1']
     
+    start_year = 2014
+    end_year = datetime.now().year
+    
     for year in range(start_year, end_year + 1):
         for league in leagues:
             print(f"Scraping data for {league} {year}")
@@ -58,4 +61,4 @@ df.to_csv('football_data3.csv', index=False)
 print(f"Data scraped and saved to football_data3.csv. Total matches: {len(df)}")
 
 # Print first few rows of the processed data
-print(df.head())
+print(df.tail())
